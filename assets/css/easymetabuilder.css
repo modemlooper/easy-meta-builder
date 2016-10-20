@@ -1,0 +1,109 @@
+.cmb-td {
+    position: relative;
+}
+
+.emb-field-data {
+    float: right;
+    position: absolute;
+    top: -15px;
+    right: -2px;
+    text-indent: -1px;
+    z-index: 9999;
+    color: #72777c;
+}
+.emb-field-data:before {
+    content: "\f140";
+    display: inline-block;
+    font: normal 18px/1 dashicons;
+}
+
+.emb-field-data-menu {
+    display: none;
+    padding: 5px 10px;
+    position: absolute;
+    min-width: 400px;
+    top: 15px;
+    right: 5px;
+    border: solid 1px #ddd;
+    background-color: #fdfdfd;
+}
+
+/**** CMB styles cleanup ***/
+
+.postbox-container .cmb2-wrap.easymetabuilder > .cmb-field-list > .cmb-row,
+.cmb-type-group .cmb2-wrap.easymetabuilder > .cmb-field-list > .cmb-row,
+.postbox-container .easymetabuilder .cmb-repeat-group-field,
+.postbox-container .easymetabuilder .cmb-remove-field-row,
+.easymetabuilder .cmb-type-group .cmb-repeat-group-field,
+.easymetabuilder .cmb-type-group .cmb-remove-field-row {
+    padding: 1.2em 0;
+}
+
+.cmb2-wrap.easymetabuilder .cmb-row.cmb-repeat .cmb2-metabox-description {
+    padding-top: 0.4em;
+    padding-bottom: 1em;
+}
+
+.cmb2-metabox button.dashicons-before.dashicons-no-alt.cmb-remove-group-row {
+    top: 0.3em !important;
+}
+
+.postbox-container .easymetabuilder .cmb-row, .cmb-type-group .cmb-row {
+    margin: 0 0 0 0;
+}
+
+.easymetabuilder .postbox.cmb-row.cmb-repeatable-grouping {
+    margin: 0.8em 0 0 0;
+}
+
+.easymetabuilder .cmb-remove-group-row {
+    background: none;
+    color: #a00;
+    text-decoration: none;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+}
+
+.easymetabuilder .cmb-remove-group-row:hover {
+    background: none;
+    color: #f00;
+    border: none;
+    text-decoration: none;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.easymetabuilder .cmb-add-group-row {
+    background: #0085ba;
+    border-color: #0073aa #006799 #006799;
+    -webkit-box-shadow: 0 1px 0 #006799;
+    box-shadow: 0 1px 0 #006799;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+}
+
+.easymetabuilder .cmb-add-group-row:hover {
+    background: #008ec2;
+    border-color: #006799;
+    color: #fff;
+}
+
+.easymetabuilder .cmb-shift-rows {
+    padding: 2px 10px 1px;
+    text-decoration: none;
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+}
+
+.easymetabuilder .cmb-shift-rows:hover {
+    background: #e9e9e9;
+}
+
+.inner-sidebar .easymetabuilder .cmb-th label:after,
+#side-sortables .easymetabuilder .cmb-th label:after {
+    border-bottom: 0px;
+    padding-top: 0px;
+}
