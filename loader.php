@@ -11,13 +11,14 @@
 /**
  * Plugin Name: Easy Meta Builder
  * Plugin URI: http://easymetabuilder.com
- * Description: The fastest and easiest way to add meta to WordPress.
+ * Description: The fastest and easiest way to add meta fields to WordPress.
  * Version:	 1.0.1
  * Author:	  Easy Meta Builder
  * Author URI:  http://easymetabuilder.com
  * License:	 GPLv2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Requires at least: 4.4
- * Tested up to: 4.6
+ * Tested up to: 4.7
  * Stable tag: 1.0.1
  * Text Domain: easymetabuilder
  * Domain Path: /languages
@@ -161,14 +162,6 @@ if ( ! class_exists( 'EasyMetaBuilder' ) ) :
 		public $field_types = '';
 
 		/**
-		 * Advanced Fields object.
-		 *
-		 * @var string|object
-		 * @since 1.0.0
-		 */
-		public $advanced_field_types = '';
-
-		/**
 		 * Creates or returns an instance of this class.
 		 *
 		 * @since 1.0.0
@@ -219,7 +212,7 @@ if ( ! class_exists( 'EasyMetaBuilder' ) ) :
 		public function hooks() {
 
 			add_action( 'admin_enqueue_scripts', array( $this, 'scripts' ) );
-			add_filter( 'plugin_action_links_'. $this->basename, array( $this, 'add_social_links' ) );
+			add_filter( 'plugin_action_links_' . $this->basename, array( $this, 'add_social_links' ) );
 
 		}
 

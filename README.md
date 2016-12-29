@@ -1,3 +1,3 @@
 # easy-meta-builder
 
-Admin UI for adding CMB2 fields
+The fastest and easiest way to add meta fields to WordPress.
