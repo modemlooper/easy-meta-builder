@@ -137,14 +137,6 @@ if ( ! class_exists( 'EasyMetaBuilder' ) ) :
 		protected static $single_instance = null;
 
 		/**
-		 * License object.
-		 *
-		 * @var string|object
-		 * @since 1.0.0
-		 */
-		public $license = '';
-
-		/**
 		 * CPT object.
 		 *
 		 * @var string|object
@@ -213,12 +205,9 @@ if ( ! class_exists( 'EasyMetaBuilder' ) ) :
 		 */
 		public function plugin_classes() {
 
-			$this->license = new EasyMetaBuilder_License( $this );
 			$this->cpt = new EasyMetaBuilder_Meta_CPT( $this );
 			$this->builder = new EasyMetaBuilder_Builder( $this );
 			$this->field_types = new EasyMetaBuilder_Field_Types( $this );
-			$this->advanced_field_types = new EasyMetaBuilder_AF_Field_Types( $this );
-
 			do_action( 'easymetabuilder_loaded' );
 		}
 
