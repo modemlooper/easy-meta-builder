@@ -162,6 +162,14 @@ if ( ! class_exists( 'EasyMetaBuilder' ) ) :
 		public $field_types = '';
 
 		/**
+		 * Fields object.
+		 *
+		 * @var string|object
+		 * @since 1.0.0
+		 */
+		public $advnaced_field_types = '';
+
+		/**
 		 * Creates or returns an instance of this class.
 		 *
 		 * @since 1.0.0
@@ -201,6 +209,7 @@ if ( ! class_exists( 'EasyMetaBuilder' ) ) :
 			$this->cpt = new EasyMetaBuilder_Meta_CPT( $this );
 			$this->builder = new EasyMetaBuilder_Builder( $this );
 			$this->field_types = new EasyMetaBuilder_Field_Types( $this );
+			$this->advnaced_field_types = new EasyMetaBuilder_Advanced_Field_Types( $this );
 			do_action( 'easymetabuilder_loaded' );
 		}
 
