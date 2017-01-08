@@ -19,7 +19,16 @@ defined( 'ABSPATH' ) || exit;
  */
 function emb_user_can_access() {
 
-	$can_meta = apply_filters( 'user_can_meta', current_user_can( 'edit_posts' ) );
+	$user_can = current_user_can( 'edit_posts' );
+
+	/**
+	 * Filters if user can access metabox.
+	 *
+	 * @since 1.0.0
+	 * @var string $user_can current_user_can( 'edit_posts' )
+	 * @return bool
+	 */
+	$can_meta = apply_filters( 'user_can_meta', $user_can );
 
 	return $can_meta;
 }
@@ -28,7 +37,7 @@ function emb_user_can_access() {
  * Echos supplied meta field
  *
  * @param  string  $meta_key meta field key.
- * @param  boolean $single   to show a single item.
+ * @param  boolean $single to show a single item.
  * @return void
  */
 function emb_meta( $meta_key = '', $single = true ) {
