@@ -30,7 +30,7 @@ add_action( 'cmb2_render_dashicon_radio', 'ml_cmb2_render_dashicon_radio_callbac
  */
 function ml_cmb2_dashicon_radio_attributes( $args, $defaults, $field, $cmb ) {
 
-	if ( $args['value'] ) {
+	if ( $args['value'] && 'dashicon_radio' === $field->args['type'] ) {
 		$args['label'] = '<span class="dashicons ' . $args['value'] . '"></span> ' . $args['label'];
 	}
 	return $args;

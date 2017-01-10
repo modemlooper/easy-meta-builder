@@ -90,6 +90,7 @@ class EasyMetaBuilder_Advanced_Field_Types {
 			'taxonomy_multicheck' => __( 'Taxonomy Muilticheck', 'easymetabuilder' ),
 			'multicheck' => __( 'Muilticheck', 'easymetabuilder' ),
 			'file_list' => __( 'File list', 'easymetabuilder' ),
+			'dashicon_radio' => __( 'Dashicon Radio', 'easymetabuilder' ),
 			'oembed' => __( 'oEmbed', 'easymetabuilder' ),
 			'text_date_timestamp' => __( 'Date Picker (UNIX timestamp)', 'easymetabuilder' ),
 			'text_datetime_timestamp' => __( 'Text Date/Time Picker Combo (UNIX timestamp)', 'easymetabuilder' ),

@@ -5,8 +5,8 @@
 .emb-field-data {
     float: right;
     position: absolute;
-    top: -15px;
-    right: -2px;
+    top: 0px;
+    right: -8px;
     text-indent: -1px;
     z-index: 9999;
     color: #72777c;
@@ -30,13 +30,93 @@
 
 /**** CMB styles cleanup ***/
 
-.postbox-container .cmb2-wrap.easymetabuilder > .cmb-field-list > .cmb-row,
-.cmb-type-group .cmb2-wrap.easymetabuilder > .cmb-field-list > .cmb-row,
-.postbox-container .easymetabuilder .cmb-repeat-group-field,
-.postbox-container .easymetabuilder .cmb-remove-field-row,
-.easymetabuilder .cmb-type-group .cmb-repeat-group-field,
-.easymetabuilder .cmb-type-group .cmb-remove-field-row {
-    padding: 1.2em 0;
+.cmb2-wrap.easymetabuilder  {
+    margin: 0;
+}
+
+div.postbox.cmb-row.cmb-repeatable-grouping {
+    padding: 0 !important;
+}
+
+body.post-type-easymetabuilder .postbox-container .cmb-repeatable-grouping, .cmb-type-group .cmb-repeatable-grouping {
+    padding: 0 0 !important;
+}
+
+#poststuff .cmb-group-title {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    min-height: 2.0em;
+}
+
+.metabox-holder .postbox > h3.cmb-group-title {
+    line-height: 2.0
+}
+
+#poststuff .emb,
+#_easymetabuilder_options_metabox .inside.emb-builder,
+body.post-type-easymetabuilder .inside.cmb-field-list {
+    margin: 0 0 0 0 !important;
+    padding: 0;
+}
+
+.cmb-row {
+    padding: 0 !important;
+}
+
+.cmb-remove-field-row {
+    padding: 10px !important;
+}
+
+.postbox-container .cmb-row .cmbhandle, .cmb-type-group .cmb-row .cmbhandle {
+    right: 0 !important;
+}
+
+.easymetabuilder .cmb-type-group .cmb-repeat-group-field {
+    padding: 0 0 !important;
+}
+
+.inside.cmb-field-list .cmb-row:not(.cmb-remove-field-row),
+body.post-type-easymetabuilder .table-layout,
+#_easymetabuilder_options_metabox .cmb-row,
+body:not(.post-type-easymetabuilder) .inside.emb .cmb-row  {
+    display: flex;
+    flex-direction: row;
+}
+
+body.post-type-easymetabuilder .inside.cmb-field-list .cmb-row .cmb-th,
+#_easymetabuilder_options_metabox .cmb-row .cmb-th,
+body:not(.post-type-easymetabuilder) .inside.emb .cmb-row .cmb-th {
+    flex: 1 0 24%;
+    background: #fafafa;
+    border-right: 1px solid #e9e9e9 !important;
+    padding: 10px;
+}
+
+body.post-type-easymetabuilder .inside.cmb-field-list .cmb-row .cmb-td,
+#_easymetabuilder_options_metabox .cmb-row .cmb-td,
+body:not(.post-type-easymetabuilder) .inside.emb .cmb-row .cmb-td {
+    flex: 1 0 68%;
+    width: 68%;
+    padding: 15px 10px;
+}
+
+.cmb2-wrap input:not([type="hidden"]) + select {
+    margin-left: 0px !important;
+}
+
+.easymetabuilder input[type="text"],
+.easymetabuilder input[type="email"],
+.easymetabuilder textarea {
+  background-color : #fafafa;
+}
+
+body.post-type-easymetabuilder .postbox-container .cmb2-wrap.easymetabuilder > .inside.cmb-field-list > .cmb-row,
+body.post-type-easymetabuilder .cmb-type-group .cmb2-wrap.easymetabuilder > .inside.cmb-field-list > .cmb-row,
+body.post-type-easymetabuilder .postbox-container .easymetabuilder .cmb-repeat-group-field,
+body.post-type-easymetabuilder .postbox-container .easymetabuilder .cmb-remove-field-row,
+body.post-type-easymetabuilder .easymetabuilder .cmb-type-group .cmb-repeat-group-field,
+body.post-type-easymetabuilder .easymetabuilder .cmb-type-group .cmb-remove-field-row {
+    padding: 0 0;
 }
 
 .cmb2-wrap.easymetabuilder .cmb-row.cmb-repeat .cmb2-metabox-description {
@@ -45,7 +125,11 @@
 }
 
 .cmb2-metabox button.dashicons-before.dashicons-no-alt.cmb-remove-group-row {
-    top: 0.3em !important;
+    top: 0.5em !important;
+}
+
+.cmb2-metabox .cmbhandle:before {
+    top: 3px !important;
 }
 
 .postbox-container .easymetabuilder .cmb-row, .cmb-type-group .cmb-row {

@@ -38,6 +38,13 @@ window.easyMetaBuilder = {};
 				$( this ).children().toggle();
 			});
 
+			if ( $('.cmb2-wrap').hasClass('easymetabuilder') ) {
+
+				var className = $('body').hasClass('post-type-easymetabuilder') ? 'emb-builder' : 'emb';
+
+				$('.cmb2-wrap').parent().addClass(className);
+			}
+
         }
 
 		// Shows field options based on type select.
