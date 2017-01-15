@@ -82,17 +82,17 @@ class EasyMetaBuilder_Builder {
 
 		$cmb_options = new_cmb2_box( array(
 			'id' => $prefix . 'options_metabox',
-			'title' => __( 'Options', 'easymetabuilder' ),
+			'title' => __( 'Options', 'easy-meta-builder' ),
 			'object_types' => array( 'easymetabuilder' ),
 			'context' => 'normal',
 			'priority' => 'high',
 			'show_names' => true,
-			'classes' => 'easymetabuilder',
+			'classes' => array( 'easymetabuilder', 'options' ),
 		) );
 
 		$cmb_options->add_field( array(
 			'name' => 'Post Type',
-			'desc' => __( 'Choose a post type this metabox will be added to.', 'easymetabuilder' ),
+			'desc' => __( 'Choose a post type this metabox will be added to.', 'easy-meta-builder' ),
 			'id'   => $prefix . 'post_type',
 			'type' => 'select',
 			'show_option_none' => false,
@@ -107,22 +107,22 @@ class EasyMetaBuilder_Builder {
 		 */
 		$cmb = new_cmb2_box( array(
 			'id' => $prefix . 'fields_metabox',
-			'title' => __( 'Fields', 'easymetabuilder' ),
+			'title' => __( 'Fields', 'easy-meta-builder' ),
 			'object_types' => $object_types,
 			'context' => 'normal',
 			'priority' => 'high',
 			'show_names' => true,
-			'classes' => 'easymetabuilder',
+			'classes' => array( 'easymetabuilder', 'fields' ),
 		) );
 
 		$group_field_id = $cmb->add_field( array(
 			'id' => $prefix . 'fields_repeat_group',
 			'type' => 'group',
-			'description' => __( 'Choose field types to add to this metabox. Some field types may have additional options that are shown after selecting a field type.', 'easymetabuilder' ),
+			'description' => __( 'Choose fields to add to this metabox. Some field types may have additional options that are shown after selecting a field type.', 'easy-meta-builder' ),
 			'options' => array(
-			'group_title' => __( 'Field {#}', 'easymetabuilder' ),
-			'add_button' => __( 'Add Another Field', 'easymetabuilder' ),
-			'remove_button' => __( 'Remove Field', 'easymetabuilder' ),
+			'group_title' => __( 'Field {#}', 'easy-meta-builder' ),
+			'add_button' => __( 'Add Another Field', 'easy-meta-builder' ),
+			'remove_button' => __( 'Remove Field', 'easy-meta-builder' ),
 			'sortable' => true,
 			),
 		) );
@@ -130,7 +130,7 @@ class EasyMetaBuilder_Builder {
 		$cmb->add_group_field( $group_field_id, array(
 			'name' => 'ID',
 			'id'   => $prefix . 'id',
-			'desc' => __( 'ID is required for field to be included in metabox. No Spaces use underscore.', 'easymetabuilder' ),
+			'desc' => __( 'ID is required for field to be included in metabox. No Spaces use underscore.', 'easy-meta-builder' ),
 			'type' => 'text',
 			'attributes'  => array(
 				'required'    => 'required',
@@ -150,9 +150,16 @@ class EasyMetaBuilder_Builder {
 			'type' => 'textarea_small',
 		) );
 
+		// $cmb->add_group_field( $group_field_id, array(
+		// 	'name' => 'Required',
+		// 	'id'   => $prefix . 'required',
+		// 	'desc' => __( 'Make this field required.', 'easy-meta-builder' ),
+		// 	'type' => 'checkbox',
+		// ) );
+
 		$cmb->add_group_field( $group_field_id, array(
 			'name' => 'Type',
-			'desc' => __( 'Choose a field type.', 'easymetabuilder' ),
+			'desc' => __( 'Choose a field type.', 'easy-meta-builder' ),
 			'id'   => $prefix . 'type',
 			'type' => 'select',
 			'row_classes' => ' typeselect',
@@ -207,7 +214,7 @@ class EasyMetaBuilder_Builder {
 				'context' => 'normal',
 				'priority' => 'high',
 				'show_names' => true,
-				'classes' => 'easymetabuilder',
+				'classes' => array( 'easymetabuilder', 'field-output', 'options' ),
 			);
 
 			/**
@@ -225,6 +232,7 @@ class EasyMetaBuilder_Builder {
 				$field_name = array_key_exists( '_easymetabuilder_name', $metabox_fields[ $field ] ) ? $metabox_fields[ $field ]['_easymetabuilder_name'] : ' ';
 				$field_type = array_key_exists( '_easymetabuilder_type', $metabox_fields[ $field ] ) ? $metabox_fields[ $field ]['_easymetabuilder_type'] : '';
 				$field_description = array_key_exists( '_easymetabuilder_description', $metabox_fields[ $field ] ) ? $metabox_fields[ $field ]['_easymetabuilder_description'] : '';
+				$field_required = array_key_exists( '_easymetabuilder_required', $metabox_fields[ $field ] ) ? $metabox_fields[ $field ]['_easymetabuilder_required'] : '';
 
 				$field_args = array(
 					'name' => $field_name,
@@ -237,6 +245,12 @@ class EasyMetaBuilder_Builder {
 				if ( ! empty( $field_description ) ) {
 					$field_args['desc'] = $field_description;
 				}
+
+				// if ( ! empty( $field_required ) ) {
+				// 	$field_args['attributes'] = array(
+				// 		'required' => 'required',
+				// 	);
+				// }
 
 				/**
 				 * Filter for cmb2 field arguments.
@@ -266,7 +280,7 @@ class EasyMetaBuilder_Builder {
 		$post_types = get_post_types( array( 'public' => true ) );
 		$disallowed_types = array( 'revision', 'attachment', 'nav_menu_item', 'easymetabuilder' );
 		$post_types = array_diff( $post_types, $disallowed_types );
-		$post_types['user'] = __( 'user profile', 'easymetabuilder' );
+		$post_types['user'] = __( 'user profile', 'easy-meta-builder' );
 
 		return apply_filters( 'easymetabuilder_get_post_types', $post_types );
 	}
@@ -280,21 +294,21 @@ class EasyMetaBuilder_Builder {
 	public function get_field_types() {
 
 		$field_types = array(
-			'title'	 => __( 'Title', 'easymetabuilder' ),
-			'text' => __( 'Text Input', 'easymetabuilder' ),
-			'text_small' => __( 'Text Input Small', 'easymetabuilder' ),
-			'text_medium' => __( 'Text Input Medium', 'easymetabuilder' ),
-			'text_email' => __( 'Text Input Email', 'easymetabuilder' ),
-			'text_url' => __( 'Text Input Url', 'easymetabuilder' ),
-			'text_money' => __( 'Text Input Money', 'easymetabuilder' ),
-			'textarea'   => __( 'Textarea', 'easymetabuilder' ),
-			'textarea_small'   => __( 'Textarea Small', 'easymetabuilder' ),
-			'textarea_code'   => __( 'Textarea Code', 'easymetabuilder' ),
-			'radio' => __( 'Radio', 'easymetabuilder' ),
-			'select' => __( 'Select', 'easymetabuilder' ),
-			'checkbox' => __( 'Checkbox', 'easymetabuilder' ),
-			'file' => __( 'File Upload', 'easymetabuilder' ),
-			'wysiwyg' => __( 'WYSIWYG Editor', 'easymetabuilder' ),
+			'title'	 => __( 'Title', 'easy-meta-builder' ),
+			'text' => __( 'Text Input', 'easy-meta-builder' ),
+			'text_small' => __( 'Text Input Small', 'easy-meta-builder' ),
+			'text_medium' => __( 'Text Input Medium', 'easy-meta-builder' ),
+			'text_email' => __( 'Text Input Email', 'easy-meta-builder' ),
+			'text_url' => __( 'Text Input Url', 'easy-meta-builder' ),
+			'text_money' => __( 'Text Input Money', 'easy-meta-builder' ),
+			'textarea'   => __( 'Textarea', 'easy-meta-builder' ),
+			'textarea_small'   => __( 'Textarea Small', 'easy-meta-builder' ),
+			'textarea_code'   => __( 'Textarea Code', 'easy-meta-builder' ),
+			'radio' => __( 'Radio', 'easy-meta-builder' ),
+			'select' => __( 'Select', 'easy-meta-builder' ),
+			'checkbox' => __( 'Checkbox', 'easy-meta-builder' ),
+			'file' => __( 'File Upload', 'easy-meta-builder' ),
+			'wysiwyg' => __( 'WYSIWYG Editor', 'easy-meta-builder' ),
 		);
 
 		/**
@@ -350,7 +364,7 @@ class EasyMetaBuilder_Builder {
 
 
 	/**
-	 * Show shorcode data after meta field
+	 * Show shortcode data after meta field
 	 *
 	 * @since 1.0.0
 	 * @param array $field cmb2 field data.

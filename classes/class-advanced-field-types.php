@@ -80,22 +80,22 @@ class EasyMetaBuilder_Advanced_Field_Types {
 	public function field_types( $allowed_types ) {
 
 		$field_types = array(
-			'colorpicker' => __( 'Color Picker', 'easymetabuilder' ),
-			'text_time' => __( 'Time Picker', 'easymetabuilder' ),
-			'text_date' => __( 'Date Picker', 'easymetabuilder' ),
-			'radio_inline' => __( 'Radio Inline', 'easymetabuilder' ),
-			'taxonomy_select' => __( 'Taxonomy Select', 'easymetabuilder' ),
-			'taxonomy_radio' => __( 'Taxonomy Radio', 'easymetabuilder' ),
-			'taxonomy_radio_inline' => __( 'Taxonomy Radio Inline', 'easymetabuilder' ),
-			'taxonomy_multicheck' => __( 'Taxonomy Muilticheck', 'easymetabuilder' ),
-			'multicheck' => __( 'Muilticheck', 'easymetabuilder' ),
-			'file_list' => __( 'File list', 'easymetabuilder' ),
-			'dashicon_radio' => __( 'Dashicon Radio', 'easymetabuilder' ),
-			'oembed' => __( 'oEmbed', 'easymetabuilder' ),
-			'text_date_timestamp' => __( 'Date Picker (UNIX timestamp)', 'easymetabuilder' ),
-			'text_datetime_timestamp' => __( 'Text Date/Time Picker Combo (UNIX timestamp)', 'easymetabuilder' ),
-			'text_datetime_timestamp_timezone' => __( 'Text Date/Time Picker/Time zone', 'easymetabuilder' ),
-			'select_timezone' => __( 'Time Zone Dropdown', 'easymetabuilder' ),
+			'colorpicker' => __( 'Color Picker', 'easy-meta-builder' ),
+			'text_time' => __( 'Time Picker', 'easy-meta-builder' ),
+			'text_date' => __( 'Date Picker', 'easy-meta-builder' ),
+			'radio_inline' => __( 'Radio Inline', 'easy-meta-builder' ),
+			'taxonomy_select' => __( 'Taxonomy Select', 'easy-meta-builder' ),
+			'taxonomy_radio' => __( 'Taxonomy Radio', 'easy-meta-builder' ),
+			'taxonomy_radio_inline' => __( 'Taxonomy Radio Inline', 'easy-meta-builder' ),
+			'taxonomy_multicheck' => __( 'Taxonomy Muilticheck', 'easy-meta-builder' ),
+			'multicheck' => __( 'Muilticheck', 'easy-meta-builder' ),
+			'file_list' => __( 'File list', 'easy-meta-builder' ),
+			'dashicon_radio' => __( 'Dashicon Radio', 'easy-meta-builder' ),
+			'oembed' => __( 'oEmbed', 'easy-meta-builder' ),
+			'text_date_timestamp' => __( 'Date Picker (UNIX timestamp)', 'easy-meta-builder' ),
+			'text_datetime_timestamp' => __( 'Text Date/Time Picker Combo (UNIX timestamp)', 'easy-meta-builder' ),
+			'text_datetime_timestamp_timezone' => __( 'Text Date/Time Picker/Time zone', 'easy-meta-builder' ),
+			'select_timezone' => __( 'Time Zone Dropdown', 'easy-meta-builder' ),
 		);
 
 		foreach ( $field_types as $type => $value ) {
@@ -121,17 +121,17 @@ class EasyMetaBuilder_Advanced_Field_Types {
 			switch ( $type ) {
 				case 'colorpicker':
 					$cmb->add_group_field( $group_field_id, array(
-						'name' => __( 'Default Color', 'easymetabuilder' ),
+						'name' => __( 'Default Color', 'easy-meta-builder' ),
 						'id'   => $prefix . $type . '_default',
-						'desc' => __( 'Sets the default color of the picker.', 'easymetabuilder' ),
+						'desc' => __( 'Sets the default color of the picker.', 'easy-meta-builder' ),
 						'row_classes' => $type . ' hidden field-option',
 						'type' => 'colorpicker',
 					) );
 
 					$cmb->add_group_field( $group_field_id, array(
-						'name' => __( 'Palette', 'easymetabuilder' ),
+						'name' => __( 'Palette', 'easy-meta-builder' ),
 						'id'   => $prefix . $type . '_palatte',
-						'desc' => __( 'Each comma seperated hex will be added as a palatte below the picker.', 'easymetabuilder' ),
+						'desc' => __( 'Each comma seperated hex will be added as a palatte below the picker.', 'easy-meta-builder' ),
 						'row_classes' => $type . ' hidden field-option',
 						'attributes' => array(
 							'placeholder' => '#ffffff, #000000',
@@ -141,25 +141,25 @@ class EasyMetaBuilder_Advanced_Field_Types {
 				break;
 				case 'radio_inline':
 					$cmb->add_group_field( $group_field_id, array(
-						'name' => __( 'Radio Options', 'easymetabuilder' ),
+						'name' => __( 'Radio Options', 'easy-meta-builder' ),
 						'id'   => $prefix . $type . '_options',
-						'desc' => __( 'Each comma seperated string will be added as an radio option.', 'easymetabuilder' ),
+						'desc' => __( 'Each comma seperated string will be added as an radio option.', 'easy-meta-builder' ),
 						'row_classes' => $type . ' hidden field-option',
 						'type' => 'text',
 					) );
 				break;
 				case 'multicheck':
 					$cmb->add_group_field( $group_field_id, array(
-						'name' => __( 'Multicheck Options', 'easymetabuilder' ),
+						'name' => __( 'Multicheck Options', 'easy-meta-builder' ),
 						'id'   => $prefix . $type . '_options',
-						'desc' => __( 'Each comma seperated string will be added as an multicheck option.', 'easymetabuilder' ),
+						'desc' => __( 'Each comma seperated string will be added as an multicheck option.', 'easy-meta-builder' ),
 						'row_classes' => $type . ' hidden field-option',
 						'type' => 'text',
 					) );
 				break;
 				case 'taxonomy_radio':
 					$cmb->add_group_field( $group_field_id, array(
-						'name' => __( 'Taxonomy', 'easymetabuilder' ),
+						'name' => __( 'Taxonomy', 'easy-meta-builder' ),
 						'id'   => $prefix . $type . '_taxonomy',
 						'row_classes' => $type . ' hidden field-option',
 						'type' => 'select',
@@ -168,7 +168,7 @@ class EasyMetaBuilder_Advanced_Field_Types {
 				break;
 				case 'taxonomy_radio_inline':
 					$cmb->add_group_field( $group_field_id, array(
-						'name' => __( 'Taxonomy', 'easymetabuilder' ),
+						'name' => __( 'Taxonomy', 'easy-meta-builder' ),
 						'id'   => $prefix . $type . '_taxonomy',
 						'row_classes' => $type . ' hidden field-option',
 						'type' => 'select',
@@ -177,7 +177,7 @@ class EasyMetaBuilder_Advanced_Field_Types {
 				break;
 				case 'taxonomy_multicheck':
 					$cmb->add_group_field( $group_field_id, array(
-						'name' => __( 'Taxonomy', 'easymetabuilder' ),
+						'name' => __( 'Taxonomy', 'easy-meta-builder' ),
 						'id'   => $prefix . $type . '_taxonomy',
 						'row_classes' => $type . ' hidden field-option',
 						'type' => 'select',

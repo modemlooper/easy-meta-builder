@@ -73,7 +73,7 @@ class EasyMetaBuilder_Field_Types {
 			switch ( $type ) {
 				case 'taxonomy_select':
 					$cmb->add_group_field( $group_field_id, array(
-						'name' => __( 'Taxonomy', 'easymetabuilder' ),
+						'name' => __( 'Taxonomy', 'easy-meta-builder' ),
 						'id'   => $prefix . $type . '_taxonomy',
 						'row_classes' => $type . ' hidden field-option',
 						'type' => 'select',
@@ -82,18 +82,18 @@ class EasyMetaBuilder_Field_Types {
 				break;
 				case 'radio':
 					$cmb->add_group_field( $group_field_id, array(
-						'name' => __( 'Radio Options', 'easymetabuilder' ),
+						'name' => __( 'Radio Options', 'easy-meta-builder' ),
 						'id'   => $prefix . $type . '_options',
-						'desc' => __( 'Each comma seperated string will be added as an radio option.', 'easymetabuilder' ),
+						'desc' => __( 'Each comma seperated string will be added as an radio option.', 'easy-meta-builder' ),
 						'row_classes' => $type . ' hidden field-option',
 						'type' => 'text',
 					) );
 				break;
 				case 'select':
 					$cmb->add_group_field( $group_field_id, array(
-						'name' => __( 'Select Options', 'easymetabuilder' ),
+						'name' => __( 'Select Options', 'easy-meta-builder' ),
 						'id'   => $prefix . $type . '_options',
-						'desc' => __( 'Each comma seperated string will be added as an select option.', 'easymetabuilder' ),
+						'desc' => __( 'Each comma seperated string will be added as an select option.', 'easy-meta-builder' ),
 						'row_classes' => $type . ' hidden field-option',
 						'type' => 'text',
 					) );
@@ -123,10 +123,24 @@ class EasyMetaBuilder_Field_Types {
 				$field_args['taxonomy'] = isset( $metabox_fields[ $field ]['_easymetabuilder_taxonomy_select_taxonomy'] ) ? $metabox_fields[ $field ]['_easymetabuilder_taxonomy_select_taxonomy'] : '';
 			break;
 			case 'radio':
-				$field_args['options'] = isset( $metabox_fields[ $field ]['_easymetabuilder_radio_options'] ) ? explode( ',', $metabox_fields[ $field ]['_easymetabuilder_radio_options'] ) : '';
+				if ( isset( $metabox_fields[ $field ]['_easymetabuilder_radio_options'] ) ) {
+					$options = explode( ',', $metabox_fields[ $field ]['_easymetabuilder_radio_options'] );
+					$arr = array();
+					foreach ( $options as $option => $value ) {
+						$arr[ $value ] = $value;
+					}
+				}
+				$field_args['options'] = $arr;
 			break;
 			case 'select':
-				$field_args['options'] = isset( $metabox_fields[ $field ]['_easymetabuilder_select_options'] ) ? explode( ',', $metabox_fields[ $field ]['_easymetabuilder_select_options'] ) : '';
+				if ( isset( $metabox_fields[ $field ]['_easymetabuilder_select_options'] ) ) {
+					$options = explode( ',', $metabox_fields[ $field ]['_easymetabuilder_select_options'] );
+					$arr = array();
+					foreach ( $options as $option => $value ) {
+						$arr[ $value ] = $value;
+					}
+				}
+				$field_args['options'] = $arr;
 			break;
 		}
 

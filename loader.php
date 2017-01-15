@@ -12,15 +12,15 @@
  * Plugin Name: Easy Meta Builder
  * Plugin URI: http://easymetabuilder.com
  * Description: The fastest and easiest way to add meta fields to WordPress.
- * Version:	 1.0.1
+ * Version:	 1.0.3
  * Author:	  Easy Meta Builder
  * Author URI:  http://easymetabuilder.com
  * License:	 GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Requires at least: 4.4
  * Tested up to: 4.7
- * Stable tag: 1.0.1
- * Text Domain: easymetabuilder
+ * Stable tag: 1.0.3
+ * Text Domain: easy-meta-builder
  * Domain Path: /languages
  */
 
@@ -87,7 +87,7 @@ if ( ! class_exists( 'EasyMetaBuilder' ) ) :
 		 * @since 1.0.0
 		 * @var string
 		 */
-		const VERSION = '1.0.1';
+		const VERSION = '1.0.3';
 
 		/**
 		 * Current version.
@@ -250,7 +250,7 @@ if ( ! class_exists( 'EasyMetaBuilder' ) ) :
 		 * @since 1.0.0
 		 */
 		public function init() {
-			load_plugin_textdomain( 'easymetabuilder', false, dirname( $this->basename ) . '/languages/' );
+			load_plugin_textdomain( 'easy-meta-builder', false, dirname( $this->basename ) . '/languages/' );
 		}
 
 		/**
@@ -316,11 +316,11 @@ if ( ! class_exists( 'EasyMetaBuilder' ) ) :
 		public function add_social_links( $links ) {
 
 			$siteLink = 'https://easymetabuilder.com/';
-			$twitterStatus = sprintf( __( 'Check out %1 from @EasyMetaBuilder %2', 'easymetabuilder' ), $this->name, $siteLink );
+			$twitterStatus = sprintf( __( 'Check out %1 from @EasyMetaBuilder %2', 'easy-meta-builder' ), $this->name, $siteLink );
 
-			array_push( $links, '<a title="' . __( 'Spread the word!', 'easymetabuilder' ) . '" href="https://www.facebook.com/sharer/sharer.php?u=' . urlencode( $siteLink ) . '" target="_blank" class="dashicons-before dashicons-facebook-alt"></a>' );
-			array_push( $links, '<a title="' . __( 'Spread the word!', 'easymetabuilder' ) . '" href="https://twitter.com/home?status=' . urlencode( $twitterStatus ) . '" target="_blank" class="dashicons-before dashicons-twitter"></a>' );
-			array_push( $links, '<a title="' . __( 'Spread the word!', 'easymetabuilder' ) . '" href="https://plus.google.com/share?url=' . urlencode( $siteLink ) . '" target="_blank" class="dashicons-before dashicons-googleplus"></a>' );
+			array_push( $links, '<a title="' . __( 'Spread the word!', 'easy-meta-builder' ) . '" href="https://www.facebook.com/sharer/sharer.php?u=' . urlencode( $siteLink ) . '" target="_blank" class="dashicons-before dashicons-facebook-alt"></a>' );
+			array_push( $links, '<a title="' . __( 'Spread the word!', 'easy-meta-builder' ) . '" href="https://twitter.com/home?status=' . urlencode( $twitterStatus ) . '" target="_blank" class="dashicons-before dashicons-twitter"></a>' );
+			array_push( $links, '<a title="' . __( 'Spread the word!', 'easy-meta-builder' ) . '" href="https://plus.google.com/share?url=' . urlencode( $siteLink ) . '" target="_blank" class="dashicons-before dashicons-googleplus"></a>' );
 
 			return $links;
 		}

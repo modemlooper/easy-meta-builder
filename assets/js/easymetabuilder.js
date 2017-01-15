@@ -38,12 +38,14 @@ window.easyMetaBuilder = {};
 				$( this ).children().toggle();
 			});
 
-			if ( $('.cmb2-wrap').hasClass('easymetabuilder') ) {
 
-				var className = $('body').hasClass('post-type-easymetabuilder') ? 'emb-builder' : 'emb';
+			$.each( $('.cmb2-wrap'), function() {
 
-				$('.cmb2-wrap').parent().addClass(className);
-			}
+				if ( $(this).hasClass('options') ) {
+					$(this).parent().addClass('no-padding');
+				}
+
+			});
 
         }
 
