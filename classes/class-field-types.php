@@ -53,7 +53,7 @@ class EasyMetaBuilder_Field_Types {
 	 * @return void
 	 */
 	public function hooks() {
-		add_filter( 'easymetabuilder_process_meta', array( $this, 'process_meta' ), 10, 3 );
+		add_filter( 'easymetabuilder_process_meta', array( $this, 'process_meta' ), 15, 3 );
 		add_action( 'add_field_options', array( $this, 'field_options' ), 10, 4 );
 	}
 
@@ -127,7 +127,27 @@ class EasyMetaBuilder_Field_Types {
 					$options = explode( ',', $metabox_fields[ $field ]['_easymetabuilder_radio_options'] );
 					$arr = array();
 					foreach ( $options as $option => $value ) {
-						$arr[ $value ] = $value;
+						$arr[ trim( $value ) ] = trim( $value );
+					}
+				}
+				$field_args['options'] = $arr;
+			break;
+			case 'radio_inline':
+				if ( isset( $metabox_fields[ $field ]['_easymetabuilder_radio_inline_options'] ) ) {
+					$options = explode( ',', $metabox_fields[ $field ]['_easymetabuilder_radio_inline_options'] );
+					$arr = array();
+					foreach ( $options as $option => $value ) {
+						$arr[ trim( $value ) ] = trim( $value );
+					}
+				}
+				$field_args['options'] = $arr;
+			break;
+			case 'multicheck':
+				if ( isset( $metabox_fields[ $field ]['_easymetabuilder_multicheck_options'] ) ) {
+					$options = explode( ',', $metabox_fields[ $field ]['_easymetabuilder_multicheck_options'] );
+					$arr = array();
+					foreach ( $options as $option => $value ) {
+						$arr[ trim( $value ) ] = trim( $value );
 					}
 				}
 				$field_args['options'] = $arr;
@@ -137,7 +157,7 @@ class EasyMetaBuilder_Field_Types {
 					$options = explode( ',', $metabox_fields[ $field ]['_easymetabuilder_select_options'] );
 					$arr = array();
 					foreach ( $options as $option => $value ) {
-						$arr[ $value ] = $value;
+						$arr[ trim( $value ) ] = trim( $value );
 					}
 				}
 				$field_args['options'] = $arr;
