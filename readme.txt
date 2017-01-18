@@ -3,7 +3,7 @@ Contributors: modemlooper, easymetabuilder
 Tags: meta fields, meta, metabox
 Requires at least: 4.4
 Tested up to: 4.7
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,8 @@ The fastest and easiest way to add meta fields to WordPress.
 == Description ==
 
 The fastest and easiest way to add meta to WordPress. Easy Meta Builder helps you add custom meta fields to post types without the need for a developer. Add extra fields to user profiles to collect data such as addresses, phone numbers, social media links and more.
+
+https://www.youtube.com/watch?v=-wpf1Ct8A3I
 
 Includes 27 awesome fields!
 
@@ -59,6 +61,10 @@ Includes 27 awesome fields!
 1. Create new meta box
 
 == Changelog ==
+= 1.0.4 - 2017-1-17 =
+* load priority change
+* radio/select options array fix
+
 = 1.0.3 - 2017-1-12 =
 * CSS adjustments
 * fix for text-domain

@@ -12,14 +12,14 @@
  * Plugin Name: Easy Meta Builder
  * Plugin URI: http://easymetabuilder.com
  * Description: The fastest and easiest way to add meta fields to WordPress.
- * Version:	 1.0.3
+ * Version:	 1.0.4
  * Author:	  Easy Meta Builder
  * Author URI:  http://easymetabuilder.com
  * License:	 GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Requires at least: 4.4
  * Tested up to: 4.7
- * Stable tag: 1.0.3
+ * Stable tag: 1.0.4
  * Text Domain: easy-meta-builder
  * Domain Path: /languages
  */
@@ -87,7 +87,7 @@ if ( ! class_exists( 'EasyMetaBuilder' ) ) :
 		 * @since 1.0.0
 		 * @var string
 		 */
-		const VERSION = '1.0.3';
+		const VERSION = '1.0.4';
 
 		/**
 		 * Current version.
